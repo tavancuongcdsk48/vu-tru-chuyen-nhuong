@@ -1,37 +1,309 @@
 {
-  "lines": [],
-  "plots": [],
-  "buildings": [],
-  "highlight_plot": {
-    "code": "NT06-10",
-    "area_m2": 153.0,
-    "street": "Đường Ngọc Trai 6",
-    "rotation": 12,
-    "center": {
-      "latitude": 20.9952885,
-      "longitude": 105.9478786
+ "source": "Lot ladder snapped along Duong Ngoc Trai 6 (Vinhomes Ocean Park 1), pitch 7.72m x depth 12m, from OSM address node NT06-01 -> NT06-37",
+ "plots": [
+  {
+   "code": "NT06-01",
+   "type": "nha-pho",
+   "angle": 35.6,
+   "coordinates": [
+    {
+     "latitude": 20.9965002,
+     "longitude": 105.9504491
     },
-    "coordinates": [
-      {
-        "latitude": 20.99535,
-        "longitude": 105.94785
-      },
-      {
-        "latitude": 20.9953678,
-        "longitude": 105.9479392
-      },
-      {
-        "latitude": 20.9952269,
-        "longitude": 105.9479073
-      },
-      {
-        "latitude": 20.9952091,
-        "longitude": 105.9478181
-      },
-      {
-        "latitude": 20.99535,
-        "longitude": 105.94785
-      }
-    ]
+    {
+     "latitude": 20.9964597,
+     "longitude": 105.9503885
+    },
+    {
+     "latitude": 20.9965477,
+     "longitude": 105.9503211
+    },
+    {
+     "latitude": 20.9965881,
+     "longitude": 105.9503817
+    },
+    {
+     "latitude": 20.9965002,
+     "longitude": 105.9504491
+    }
+   ]
+  },
+  {
+   "code": "NT06-02",
+   "type": "nha-pho",
+   "angle": 35.5,
+   "coordinates": [
+    {
+     "latitude": 20.9964597,
+     "longitude": 105.9503885
+    },
+    {
+     "latitude": 20.9964193,
+     "longitude": 105.9503279
+    },
+    {
+     "latitude": 20.9965072,
+     "longitude": 105.9502605
+    },
+    {
+     "latitude": 20.9965477,
+     "longitude": 105.9503211
+    },
+    {
+     "latitude": 20.9964597,
+     "longitude": 105.9503885
+    }
+   ]
+  },
+  {
+   "code": "NT06-03",
+   "type": "nha-pho",
+   "angle": 35.6,
+   "coordinates": [
+    {
+     "latitude": 20.9964193,
+     "longitude": 105.9503279
+    },
+    {
+     "latitude": 20.9963788,
+     "longitude": 105.9502673
+    },
+    {
+     "latitude": 20.9964668,
+     "longitude": 105.9501999
+    },
+    {
+     "latitude": 20.9965072,
+     "longitude": 105.9502605
+    },
+    {
+     "latitude": 20.9964193,
+     "longitude": 105.9503279
+    }
+   ]
+  },
+  {
+   "code": "NT06-04",
+   "type": "nha-pho",
+   "angle": 35.5,
+   "coordinates": [
+    {
+     "latitude": 20.9963788,
+     "longitude": 105.9502673
+    },
+    {
+     "latitude": 20.9963384,
+     "longitude": 105.9502067
+    },
+    {
+     "latitude": 20.9964263,
+     "longitude": 105.9501393
+    },
+    {
+     "latitude": 20.9964668,
+     "longitude": 105.9501999
+    },
+    {
+     "latitude": 20.9963788,
+     "longitude": 105.9502673
+    }
+   ]
+  },
+  {
+   "code": "NT06-05",
+   "type": "nha-pho",
+   "angle": 35.6,
+   "coordinates": [
+    {
+     "latitude": 20.9963384,
+     "longitude": 105.9502067
+    },
+    {
+     "latitude": 20.9962979,
+     "longitude": 105.9501461
+    },
+    {
+     "latitude": 20.9963859,
+     "longitude": 105.9500787
+    },
+    {
+     "latitude": 20.9964263,
+     "longitude": 105.9501393
+    },
+    {
+     "latitude": 20.9963384,
+     "longitude": 105.9502067
+    }
+   ]
+  },
+  {
+   "code": "NT06-06",
+   "type": "nha-pho",
+   "angle": 35.5,
+   "coordinates": [
+    {
+     "latitude": 20.9962979,
+     "longitude": 105.9501461
+    },
+    {
+     "latitude": 20.9962575,
+     "longitude": 105.9500855
+    },
+    {
+     "latitude": 20.9963454,
+     "longitude": 105.9500181
+    },
+    {
+     "latitude": 20.9963859,
+     "longitude": 105.9500787
+    },
+    {
+     "latitude": 20.9962979,
+     "longitude": 105.9501461
+    }
+   ]
+  },
+  {
+   "code": "NT06-07",
+   "type": "nha-pho",
+   "angle": 35.6,
+   "coordinates": [
+    {
+     "latitude": 20.9962575,
+     "longitude": 105.9500855
+    },
+    {
+     "latitude": 20.996217,
+     "longitude": 105.9500249
+    },
+    {
+     "latitude": 20.996305,
+     "longitude": 105.9499575
+    },
+    {
+     "latitude": 20.9963454,
+     "longitude": 105.9500181
+    },
+    {
+     "latitude": 20.9962575,
+     "longitude": 105.9500855
+    }
+   ]
+  },
+  {
+   "code": "NT06-08",
+   "type": "nha-pho",
+   "angle": 35.5,
+   "coordinates": [
+    {
+     "latitude": 20.996217,
+     "longitude": 105.9500249
+    },
+    {
+     "latitude": 20.9961766,
+     "longitude": 105.9499643
+    },
+    {
+     "latitude": 20.9962645,
+     "longitude": 105.9498969
+    },
+    {
+     "latitude": 20.996305,
+     "longitude": 105.9499575
+    },
+    {
+     "latitude": 20.996217,
+     "longitude": 105.9500249
+    }
+   ]
+  },
+  {
+   "code": "NT06-09",
+   "type": "nha-pho",
+   "angle": 35.6,
+   "coordinates": [
+    {
+     "latitude": 20.9961766,
+     "longitude": 105.9499643
+    },
+    {
+     "latitude": 20.9961361,
+     "longitude": 105.9499037
+    },
+    {
+     "latitude": 20.9962241,
+     "longitude": 105.9498363
+    },
+    {
+     "latitude": 20.9962645,
+     "longitude": 105.9498969
+    },
+    {
+     "latitude": 20.9961766,
+     "longitude": 105.9499643
+    }
+   ]
+  },
+  {
+   "code": "NT06-10",
+   "type": "nha-pho",
+   "angle": 35.5,
+   "coordinates": [
+    {
+     "latitude": 20.9961361,
+     "longitude": 105.9499037
+    },
+    {
+     "latitude": 20.9960957,
+     "longitude": 105.949843
+    },
+    {
+     "latitude": 20.9961836,
+     "longitude": 105.9497757
+    },
+    {
+     "latitude": 20.9962241,
+     "longitude": 105.9498363
+    },
+    {
+     "latitude": 20.9961361,
+     "longitude": 105.9499037
+    }
+   ]
   }
+ ],
+ "highlight_plot": {
+  "code": "NT06-10",
+  "area_m2": 153.0,
+  "street": "Đường Ngọc Trai 6",
+  "angle": 35.5,
+  "center": {
+   "latitude": 20.9961551,
+   "longitude": 105.9498525
+  },
+  "coordinates": [
+   {
+    "latitude": 20.9961361,
+    "longitude": 105.9499037
+   },
+   {
+    "latitude": 20.9960957,
+    "longitude": 105.949843
+   },
+   {
+    "latitude": 20.9961836,
+    "longitude": 105.9497757
+   },
+   {
+    "latitude": 20.9962241,
+    "longitude": 105.9498363
+   },
+   {
+    "latitude": 20.9961361,
+    "longitude": 105.9499037
+   }
+  ]
+ },
+ "lines": [],
+ "buildings": []
 }
