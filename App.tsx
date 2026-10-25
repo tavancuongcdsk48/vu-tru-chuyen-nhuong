@@ -14,7 +14,7 @@ import {
   Platform,
   TextInput
 } from 'react-native';
-import MapView, { Marker, UrlTile, Polyline, Polygon, PROVIDER_GOOGLE, PROVIDER_DEFAULT, Region } from 'react-native-maps';
+import MapView, { Marker, UrlTile, PROVIDER_GOOGLE, PROVIDER_DEFAULT, Region } from 'react-native-maps';
 
 /** 3_300_000_000 → "3,3 tỷ"; 2_450_000_000 → "2,45 tỷ" */
 const formatTy = (vnd: number) => {
@@ -26,8 +26,6 @@ import * as Location from 'expo-location';
 import { useGoogleAuth } from './src/hooks/useGoogleAuth';
 import { CreatePinModal, NewPinData } from './src/components/CreatePinModal';
 import { PriceAnalysisSheet } from './src/components/PriceAnalysisSheet';
-import oceanParkLayout from './src/data/oceanParkWireframe.json';
-import osmLots from './src/data/osmLotsOceanPark.json';
 import { AuthModal } from './src/components/AuthModal';
 import { SavedPinsModal } from './src/components/SavedPinsModal';
 import { MediaStrip, MediaViewer } from './src/components/PinMedia';
@@ -826,17 +824,14 @@ export default function App() {
     return true;
   });
 
-  // Mức zoom hiện tại: dùng để đổi nguồn tile (Esri Dark chỉ có tới z16, ảnh vệ tinh tới z19)
-  const [mapDelta, setMapDelta] = useState(0.0010); // khớp initialRegion để nhãn lô hiện đúng ngay lần đầu
-  // Nhãn số lô to dần khi zoom sát (z18-19 mới đọc được tên lô)
-  const lotLabelSize = mapDelta < 0.0022 ? 11 : mapDelta < 0.0045 ? 9 : 7;
+  // Mức zoom hiện tại: đổi nguồn tile (Esri Dark chỉ tới z16, ảnh vệ tinh tới z19)
+  const [mapDelta, setMapDelta] = useState(0.02);
 
   const initialRegion: Region = {
-    // Hàng lô NT06 dọc Đường Ngọc Trai 6 (Vinhomes Ocean Park 1) — khớp mái nhà thật
-    latitude: 20.996281,
-    longitude: 105.950079,
-    latitudeDelta: 0.00055,
-    longitudeDelta: 0.00055,
+    latitude: location ? location.latitude : 21.0335,
+    longitude: location ? location.longitude : 105.7942,
+    latitudeDelta: 0.02,
+    longitudeDelta: 0.02,
   };
 
   return (
@@ -976,7 +971,7 @@ export default function App() {
           provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : PROVIDER_DEFAULT}
           // Android: nền Google cần API key có billing → dùng tile OSM miễn phí cho tới khi có key
           mapType={Platform.OS === 'android' ? 'none' : 'standard'}
-          // Chặn zoom quá mức: tile vệ tinh chỉ có tới z19, vượt là nền trắng
+          // Tile vệ tinh chỉ có tới z19, vượt là nền trắng
           maxZoomLevel={19}
           minZoomLevel={10}
           style={styles.map}
@@ -984,7 +979,6 @@ export default function App() {
           onRegionChangeComplete={(region) => {
             mapCenterRef.current = { latitude: region.latitude, longitude: region.longitude };
             setMapDelta(region.latitudeDelta);
-
             loadPins(region);
             if (pickMode) {
               setPickCenter({ latitude: region.latitude, longitude: region.longitude });
@@ -999,7 +993,6 @@ export default function App() {
               key={mapDelta < 0.008 ? 'img' : 'dark'}
               urlTemplate={
                 mapDelta < 0.008
-                  // zoom sát: nền Google (vệ tinh + nhãn đường), cùng hệ toạ độ WGS84 với polygon OSM
                   ? 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}'
                   : 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}'
               }
@@ -1031,131 +1024,6 @@ export default function App() {
                 </Text>
               </View>
             </Marker>
-          ))}
-
-          {/* Layer Vector GPS: Bo viền ranh giới & trục đường mặt bằng Ocean Park */}
-          {/* Lô thật: 183 lô có mã, cắt từ footprint OSM theo từng địa chỉ */}
-          {osmLots.lots.map((l: any) => (
-            <Polygon
-              key={`lot-${l.id}`}
-              coordinates={l.coords}
-              strokeColor="rgba(255,255,255,0.55)"
-              fillColor={l.code === 'NT06-11' ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.02)'}
-              strokeWidth={1}
-              zIndex={10}
-            />
-          ))}
-          {mapDelta <= 0.0035 &&
-            osmLots.lots
-              .filter((l: any) => l.code && l.coords.length > 3)
-              .filter((l: any) => {
-                const h = Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude));
-                const bboxWm = (Math.max(...l.coords.map((c: any) => c.longitude)) - Math.min(...l.coords.map((c: any) => c.longitude))) * 103600 * Math.cos((l.coords[0].latitude * Math.PI) / 180);
-                const bboxHm = (Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude))) * 111000;
-                const pxW = (Math.min(bboxWm, bboxHm) / Math.max(mapDelta, 0.0001)) * 2.4;
-                return pxW > 30 || l.code === 'NT06-11';
-              })
-              .map((l: any) => {
-                const la = l.coords.reduce((s: number, c: any) => s + c.latitude, 0) / l.coords.length;
-                const lo = l.coords.reduce((s: number, c: any) => s + c.longitude, 0) / l.coords.length;
-                const hDeg = Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude));
-                const wDeg = Math.max(...l.coords.map((c: any) => c.longitude)) - Math.min(...l.coords.map((c: any) => c.longitude));
-                const rot = (Math.atan2(wDeg * Math.cos((la * Math.PI) / 180), hDeg) * 180) / Math.PI;
-                return (
-                  <Marker
-                    key={`lbl-${l.id}`}
-                    coordinate={{ latitude: la, longitude: lo }}
-                    anchor={{ x: 0.5, y: 0.5 }}
-                    tracksViewChanges={false}
-                  >
-                    <View
-                      style={{
-                        transform: [{ rotate: `${rot}deg` }],
-                        alignItems: 'center',
-                      }}
-                    >
-                      <Text
-                        style={{
-                          color: '#ffffff',
-                          fontSize: lotLabelSize,
-                          fontWeight: '800',
-                          textShadowColor: 'rgba(0,0,0,1)',
-                          textShadowOffset: { width: 0, height: 1 },
-                          textShadowRadius: 3,
-                        }}
-                      >
-                        {(() => {
-                          const bboxWm = (Math.max(...l.coords.map((c: any) => c.longitude)) - Math.min(...l.coords.map((c: any) => c.longitude))) * 103600 * Math.cos((l.coords[0].latitude * Math.PI) / 180);
-                          const bboxHm = (Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude))) * 111000;
-                          const pxW = (Math.min(bboxWm, bboxHm) / Math.max(mapDelta, 0.0001)) * 2.4;
-                          const full = String(l.code);
-                          return pxW > 62 ? full : full.replace('NT0', 'NT').split('-')[1];
-                        })()}
-                      </Text>
-                      {mapDelta <= 0.0016 && (
-                        <Text
-                          style={{
-                            color: '#e2e8f0',
-                            fontSize: Math.max(7, lotLabelSize - 3),
-                            fontWeight: '700',
-                            textShadowColor: 'rgba(0,0,0,1)',
-                            textShadowOffset: { width: 0, height: 1 },
-                            textShadowRadius: 2,
-                          }}
-                        >
-                          {Math.round(l.area_m2)}m²
-                        </Text>
-                      )}
-                    </View>
-                  </Marker>
-                );
-              })}
-          {(oceanParkLayout.lines as any[] || []).map((l: any) => (
-            <Polyline
-              key={l.id}
-              coordinates={l.coordinates}
-              strokeColor="rgba(56, 189, 248, 0.75)"
-              strokeWidth={2}
-            />
-          ))}
-
-          {/* Nhãn 37 lô NT06-01..37 đặt lên các lô đã chia sẵn trên bản đồ (chỉ điền tên) */}
-          {(oceanParkLayout.labels as any[] || [])
-            .filter(() => mapDelta <= 0.0032)
-            .map((l: any) => (
-            <Marker
-              key={`${l.code}-${lotLabelSize}`}
-              coordinate={{ latitude: l.latitude, longitude: l.longitude }}
-              anchor={{ x: 0.5, y: 0.5 }}
-              tracksViewChanges={false}
-              zIndex={12}
-            >
-              <View style={{ transform: [{ rotate: `${oceanParkLayout.angle}deg` }], alignItems: 'center' }}>
-                <Text
-                  style={{
-                    color: '#ffffff',
-                    fontSize: lotLabelSize,
-                    fontWeight: '800',
-                    textShadowColor: 'rgba(0,0,0,1)',
-                    textShadowOffset: { width: 0, height: 1 },
-                    textShadowRadius: 3,
-                  }}
-                >
-                  {l.code.replace('NT06-', 'NT6-')}
-                </Text>
-              </View>
-            </Marker>
-          ))}
-
-          {/* Layer Vector GPS: Bo viền layout các khối toà chung cư */}
-          {(oceanParkLayout.buildings as any[] || []).map((b: any) => (
-            <Polygon
-              key={b.code}
-              coordinates={b.coordinates}
-              strokeColor="#f59e0b"
-              fillColor="rgba(245, 158, 11, 0.22)"
-              strokeWidth={2}
-            />
           ))}
         </MapView>
       )}
