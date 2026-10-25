@@ -833,10 +833,10 @@ export default function App() {
 
   const initialRegion: Region = {
     // Hàng lô NT06 dọc Đường Ngọc Trai 6 (Vinhomes Ocean Park 1) — khớp mái nhà thật
-    latitude: 20.99616,
-    longitude: 105.94985,
-    latitudeDelta: 0.0010,
-    longitudeDelta: 0.0010,
+    latitude: 20.996281,
+    longitude: 105.950079,
+    latitudeDelta: 0.00055,
+    longitudeDelta: 0.00055,
   };
 
   return (
@@ -1034,14 +1034,14 @@ export default function App() {
           ))}
 
           {/* Layer Vector GPS: Bo viền ranh giới & trục đường mặt bằng Ocean Park */}
-          {/* Lô thật: footprint nhà từ OpenStreetMap (413 lô, 184 lô có số nhà) */}
+          {/* Lô thật: 183 lô có mã, cắt từ footprint OSM theo từng địa chỉ */}
           {osmLots.lots.map((l: any) => (
             <Polygon
               key={`lot-${l.id}`}
               coordinates={l.coords}
-              strokeColor={l.code ? 'rgba(34,211,238,0.95)' : 'rgba(148,163,184,0.40)'}
-              fillColor={l.code ? 'rgba(34,211,238,0.16)' : 'rgba(148,163,184,0.06)'}
-              strokeWidth={l.code ? 2 : 1}
+              strokeColor="rgba(255,255,255,0.55)"
+              fillColor={l.code === 'NT06-11' ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.02)'}
+              strokeWidth={1}
               zIndex={10}
             />
           ))}
@@ -1050,7 +1050,10 @@ export default function App() {
               .filter((l: any) => l.code && l.coords.length > 3)
               .filter((l: any) => {
                 const h = Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude));
-                return (h / Math.max(mapDelta, 0.0001)) * 2400 > 26;
+                const bboxWm = (Math.max(...l.coords.map((c: any) => c.longitude)) - Math.min(...l.coords.map((c: any) => c.longitude))) * 103600 * Math.cos((l.coords[0].latitude * Math.PI) / 180);
+                const bboxHm = (Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude))) * 111000;
+                const pxW = (Math.min(bboxWm, bboxHm) / Math.max(mapDelta, 0.0001)) * 2.4;
+                return pxW > 30 || l.code === 'NT06-11';
               })
               .map((l: any) => {
                 const la = l.coords.reduce((s: number, c: any) => s + c.latitude, 0) / l.coords.length;
@@ -1068,15 +1071,41 @@ export default function App() {
                     <View
                       style={{
                         transform: [{ rotate: `${rot}deg` }],
-                        backgroundColor: 'rgba(2,6,23,0.82)',
-                        paddingHorizontal: 4,
-                        paddingVertical: 1,
-                        borderRadius: 4,
-                        borderWidth: 1,
-                        borderColor: 'rgba(34,211,238,0.55)',
+                        alignItems: 'center',
                       }}
                     >
-                      <Text style={{ color: '#ffffff', fontSize: 10, fontWeight: '800' }}>{l.code}</Text>
+                      <Text
+                        style={{
+                          color: '#ffffff',
+                          fontSize: lotLabelSize,
+                          fontWeight: '800',
+                          textShadowColor: 'rgba(0,0,0,1)',
+                          textShadowOffset: { width: 0, height: 1 },
+                          textShadowRadius: 3,
+                        }}
+                      >
+                        {(() => {
+                          const bboxWm = (Math.max(...l.coords.map((c: any) => c.longitude)) - Math.min(...l.coords.map((c: any) => c.longitude))) * 103600 * Math.cos((l.coords[0].latitude * Math.PI) / 180);
+                          const bboxHm = (Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude))) * 111000;
+                          const pxW = (Math.min(bboxWm, bboxHm) / Math.max(mapDelta, 0.0001)) * 2.4;
+                          const full = String(l.code);
+                          return pxW > 62 ? full : full.replace('NT0', 'NT').split('-')[1];
+                        })()}
+                      </Text>
+                      {mapDelta <= 0.0016 && (
+                        <Text
+                          style={{
+                            color: '#e2e8f0',
+                            fontSize: Math.max(7, lotLabelSize - 3),
+                            fontWeight: '700',
+                            textShadowColor: 'rgba(0,0,0,1)',
+                            textShadowOffset: { width: 0, height: 1 },
+                            textShadowRadius: 2,
+                          }}
+                        >
+                          {Math.round(l.area_m2)}m²
+                        </Text>
+                      )}
                     </View>
                   </Marker>
                 );
