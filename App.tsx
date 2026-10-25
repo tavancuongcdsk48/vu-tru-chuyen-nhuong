@@ -27,6 +27,7 @@ import { useGoogleAuth } from './src/hooks/useGoogleAuth';
 import { CreatePinModal, NewPinData } from './src/components/CreatePinModal';
 import { PriceAnalysisSheet } from './src/components/PriceAnalysisSheet';
 import oceanParkLayout from './src/data/oceanParkWireframe.json';
+import osmLots from './src/data/osmLotsOceanPark.json';
 import { AuthModal } from './src/components/AuthModal';
 import { SavedPinsModal } from './src/components/SavedPinsModal';
 import { MediaStrip, MediaViewer } from './src/components/PinMedia';
@@ -826,7 +827,7 @@ export default function App() {
   });
 
   // Mức zoom hiện tại: dùng để đổi nguồn tile (Esri Dark chỉ có tới z16, ảnh vệ tinh tới z19)
-  const [mapDelta, setMapDelta] = useState(0.02);
+  const [mapDelta, setMapDelta] = useState(0.0010); // khớp initialRegion để nhãn lô hiện đúng ngay lần đầu
   // Nhãn số lô to dần khi zoom sát (z18-19 mới đọc được tên lô)
   const lotLabelSize = mapDelta < 0.0022 ? 11 : mapDelta < 0.0045 ? 9 : 7;
 
@@ -993,7 +994,7 @@ export default function App() {
           showsMyLocationButton={false}
           showsCompass={false}
         >
-          {Platform.OS === '__off__' && (
+          {Platform.OS === 'android' && (
             <UrlTile
               key={mapDelta < 0.008 ? 'img' : 'dark'}
               urlTemplate={
@@ -1007,19 +1008,6 @@ export default function App() {
               zIndex={1}
             />
           )}
-          {/* TEST: polygon to */}
-          <Polygon
-            coordinates={[
-              { latitude: 20.9975, longitude: 105.9495 },
-              { latitude: 20.9975, longitude: 105.9515 },
-              { latitude: 20.9958, longitude: 105.9515 },
-              { latitude: 20.9958, longitude: 105.9495 },
-            ]}
-            strokeColor="#ff00ff"
-            fillColor="rgba(255,0,255,0.5)"
-            strokeWidth={6}
-            zIndex={999}
-          />
           {filteredPins.map((pin) => (
             <Marker
               key={pin.id}
@@ -1044,62 +1032,55 @@ export default function App() {
               </View>
             </Marker>
           ))}
-          {/* Lô biệt thự điểm nhấn: NT06-10 (Khung chữ nhật viền trắng, chữ nằm gọn bên trong) */}
-          {oceanParkLayout.highlight_plot && (
-            <>
-              {/* Viền hình chữ nhật màu trắng bo đúng ranh giới lô đất (toạ độ OSM) */}
-              <Polygon
-                coordinates={oceanParkLayout.highlight_plot.coordinates}
-                strokeColor="#ffffff"
-                fillColor="rgba(255, 255, 255, 0.18)"
-                strokeWidth={2.5}
-                zIndex={5}
-              />
-              {/* Text nằm gọn bên trong lô đất theo đúng hướng nhà */}
-              <Marker
-                coordinate={oceanParkLayout.highlight_plot.center}
-                anchor={{ x: 0.5, y: 0.5 }}
-                tracksViewChanges={false}
-              >
-                <View
-                  style={{
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transform: [{ rotate: `${oceanParkLayout.highlight_plot.angle || 0}deg` }],
-                  }}
-                >
-                  <Text
-                    style={{
-                      color: '#ffffff',
-                      fontSize: 10,
-                      fontWeight: '800',
-                      letterSpacing: 0.5,
-                      textShadowColor: 'rgba(0, 0, 0, 0.95)',
-                      textShadowOffset: { width: 0, height: 1 },
-                      textShadowRadius: 2,
-                    }}
-                  >
-                    {oceanParkLayout.highlight_plot.code}
-                  </Text>
-                  <Text
-                    style={{
-                      color: '#e2e8f0',
-                      fontSize: 8,
-                      fontWeight: '700',
-                      marginTop: 1,
-                      textShadowColor: 'rgba(0, 0, 0, 0.95)',
-                      textShadowOffset: { width: 0, height: 1 },
-                      textShadowRadius: 2,
-                    }}
-                  >
-                    {oceanParkLayout.highlight_plot.area_m2}m²
-                  </Text>
-                </View>
-              </Marker>
-            </>
-          )}
 
           {/* Layer Vector GPS: Bo viền ranh giới & trục đường mặt bằng Ocean Park */}
+          {/* Lô thật: footprint nhà từ OpenStreetMap (413 lô, 184 lô có số nhà) */}
+          {osmLots.lots.map((l: any) => (
+            <Polygon
+              key={`lot-${l.id}`}
+              coordinates={l.coords}
+              strokeColor={l.code ? 'rgba(34,211,238,0.95)' : 'rgba(148,163,184,0.40)'}
+              fillColor={l.code ? 'rgba(34,211,238,0.16)' : 'rgba(148,163,184,0.06)'}
+              strokeWidth={l.code ? 2 : 1}
+              zIndex={10}
+            />
+          ))}
+          {mapDelta <= 0.0035 &&
+            osmLots.lots
+              .filter((l: any) => l.code && l.coords.length > 3)
+              .filter((l: any) => {
+                const h = Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude));
+                return (h / Math.max(mapDelta, 0.0001)) * 2400 > 26;
+              })
+              .map((l: any) => {
+                const la = l.coords.reduce((s: number, c: any) => s + c.latitude, 0) / l.coords.length;
+                const lo = l.coords.reduce((s: number, c: any) => s + c.longitude, 0) / l.coords.length;
+                const hDeg = Math.max(...l.coords.map((c: any) => c.latitude)) - Math.min(...l.coords.map((c: any) => c.latitude));
+                const wDeg = Math.max(...l.coords.map((c: any) => c.longitude)) - Math.min(...l.coords.map((c: any) => c.longitude));
+                const rot = (Math.atan2(wDeg * Math.cos((la * Math.PI) / 180), hDeg) * 180) / Math.PI;
+                return (
+                  <Marker
+                    key={`lbl-${l.id}`}
+                    coordinate={{ latitude: la, longitude: lo }}
+                    anchor={{ x: 0.5, y: 0.5 }}
+                    tracksViewChanges={false}
+                  >
+                    <View
+                      style={{
+                        transform: [{ rotate: `${rot}deg` }],
+                        backgroundColor: 'rgba(2,6,23,0.82)',
+                        paddingHorizontal: 4,
+                        paddingVertical: 1,
+                        borderRadius: 4,
+                        borderWidth: 1,
+                        borderColor: 'rgba(34,211,238,0.55)',
+                      }}
+                    >
+                      <Text style={{ color: '#ffffff', fontSize: 10, fontWeight: '800' }}>{l.code}</Text>
+                    </View>
+                  </Marker>
+                );
+              })}
           {(oceanParkLayout.lines as any[] || []).map((l: any) => (
             <Polyline
               key={l.id}
@@ -1109,61 +1090,33 @@ export default function App() {
             />
           ))}
 
-          {/* Layer Vector GPS: 18 lô thật dọc Đường Ngọc Trai 6 (toạ độ OSM) */}
-          {(oceanParkLayout.plots as any[] || []).map((p: any) => {
-            const lat = p.coordinates.reduce((s: number, c: any) => s + c.latitude, 0) / p.coordinates.length;
-            const lng = p.coordinates.reduce((s: number, c: any) => s + c.longitude, 0) / p.coordinates.length;
-            // Chỉ đặt tên lô khi lô đủ to trên màn hình (tránh nhãn chồng nhau)
-            const latSpan = Math.max(...p.coordinates.map((c: any) => c.latitude)) - Math.min(...p.coordinates.map((c: any) => c.latitude));
-            const lotPx = (latSpan / Math.max(mapDelta, 0.0001)) * 2400;
-            // Xa thì không đặt tên từng lô (nhãn sẽ chồng nhau) — chỉ hiện khi zoom sát
-            const showLotName = mapDelta <= 0.0045 && lotPx > 26;
-            return (
-              <React.Fragment key={p.code}>
-                <Polygon
-                  coordinates={p.coordinates}
-                  strokeColor="rgba(255,255,255,0.95)"
-                  fillColor="rgba(255,255,255,0.06)"
-                  strokeWidth={1.5}
-                  zIndex={10}
-                />
-                {showLotName && (
-                <Marker
-                  coordinate={{ latitude: lat, longitude: lng }}
-                  anchor={{ x: 0.5, y: 0.5 }}
-                  tracksViewChanges={false}
-                  key={`${p.code}-${lotLabelSize}`}
+          {/* Nhãn 37 lô NT06-01..37 đặt lên các lô đã chia sẵn trên bản đồ (chỉ điền tên) */}
+          {(oceanParkLayout.labels as any[] || [])
+            .filter(() => mapDelta <= 0.0032)
+            .map((l: any) => (
+            <Marker
+              key={`${l.code}-${lotLabelSize}`}
+              coordinate={{ latitude: l.latitude, longitude: l.longitude }}
+              anchor={{ x: 0.5, y: 0.5 }}
+              tracksViewChanges={false}
+              zIndex={12}
+            >
+              <View style={{ transform: [{ rotate: `${oceanParkLayout.angle}deg` }], alignItems: 'center' }}>
+                <Text
+                  style={{
+                    color: '#ffffff',
+                    fontSize: lotLabelSize,
+                    fontWeight: '800',
+                    textShadowColor: 'rgba(0,0,0,1)',
+                    textShadowOffset: { width: 0, height: 1 },
+                    textShadowRadius: 3,
+                  }}
                 >
-                  <View
-                    style={{
-                      transform: [{ rotate: `${p.angle}deg` }],
-                      alignItems: 'center',
-                      backgroundColor: mapDelta < 0.006 ? 'rgba(2,6,23,0.72)' : 'transparent',
-                      paddingHorizontal: lotLabelSize > 7 ? 4 : 0,
-                      paddingVertical: lotLabelSize > 7 ? 1 : 0,
-                      borderRadius: 4,
-                      borderWidth: lotLabelSize > 7 ? 1 : 0,
-                      borderColor: 'rgba(148,163,184,0.35)',
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color: '#ffffff',
-                        fontSize: lotLabelSize,
-                        fontWeight: '800',
-                        textShadowColor: 'rgba(0,0,0,0.95)',
-                        textShadowOffset: { width: 0, height: 1 },
-                        textShadowRadius: 2,
-                      }}
-                    >
-                      {p.code}
-                    </Text>
-                  </View>
-                </Marker>
-                )}
-              </React.Fragment>
-            );
-          })}
+                  {l.code.replace('NT06-', 'NT6-')}
+                </Text>
+              </View>
+            </Marker>
+          ))}
 
           {/* Layer Vector GPS: Bo viền layout các khối toà chung cư */}
           {(oceanParkLayout.buildings as any[] || []).map((b: any) => (
