@@ -1,0 +1,1100 @@
+[
+ {
+  "code": "NT11-23",
+  "street": "Ngọc Trai 11",
+  "lat": 20.9978103,
+  "lon": 105.947783
+ },
+ {
+  "code": "NT11-21",
+  "street": "Ngọc Trai 11",
+  "lat": 20.9978567,
+  "lon": 105.9478507
+ },
+ {
+  "code": "NT11-19",
+  "street": "Ngọc Trai 11",
+  "lat": 20.997902,
+  "lon": 105.9479208
+ },
+ {
+  "code": "NT11-17",
+  "street": "Ngọc Trai 11",
+  "lat": 20.9979484,
+  "lon": 105.9479885
+ },
+ {
+  "code": "NT11-15",
+  "street": "Ngọc Trai 11",
+  "lat": 20.9979913,
+  "lon": 105.9480446
+ },
+ {
+  "code": "NT10-23",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9974544,
+  "lon": 105.9480748
+ },
+ {
+  "code": "NT10-21",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9975008,
+  "lon": 105.9481425
+ },
+ {
+  "code": "NT10-19",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9975461,
+  "lon": 105.9482126
+ },
+ {
+  "code": "NT10-17",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9975925,
+  "lon": 105.9482803
+ },
+ {
+  "code": "NT10-15",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9976354,
+  "lon": 105.9483364
+ },
+ {
+  "code": "NT10-11",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9976819,
+  "lon": 105.948404
+ },
+ {
+  "code": "NT10-09",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9977236,
+  "lon": 105.948464
+ },
+ {
+  "code": "NT10-07",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9977701,
+  "lon": 105.9485316
+ },
+ {
+  "code": "NT10-05",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9978231,
+  "lon": 105.9485922
+ },
+ {
+  "code": "NT10-03",
+  "street": "Ngọc Trai 10",
+  "lat": 20.9978696,
+  "lon": 105.9486598
+ },
+ {
+  "code": "NT09-23",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9970923,
+  "lon": 105.9483617
+ },
+ {
+  "code": "NT09-21",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9971387,
+  "lon": 105.9484294
+ },
+ {
+  "code": "NT09-19",
+  "street": "Ngọc Trai 9",
+  "lat": 20.997184,
+  "lon": 105.9484995
+ },
+ {
+  "code": "NT09-17",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9972304,
+  "lon": 105.9485672
+ },
+ {
+  "code": "NT09-15",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9972733,
+  "lon": 105.9486233
+ },
+ {
+  "code": "NT09-11",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9973198,
+  "lon": 105.9486909
+ },
+ {
+  "code": "NT09-09",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9973615,
+  "lon": 105.9487509
+ },
+ {
+  "code": "NT09-07",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9974079,
+  "lon": 105.9488185
+ },
+ {
+  "code": "NT09-05",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9974609,
+  "lon": 105.9488791
+ },
+ {
+  "code": "NT09-03",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9975074,
+  "lon": 105.9489467
+ },
+ {
+  "code": "NT09-31",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9967255,
+  "lon": 105.9477838
+ },
+ {
+  "code": "NT09-33",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9966724,
+  "lon": 105.9477216
+ },
+ {
+  "code": "NT09-35",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9966284,
+  "lon": 105.9476572
+ },
+ {
+  "code": "NT09-37",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9965783,
+  "lon": 105.9475917
+ },
+ {
+  "code": "NT09-39",
+  "street": "Ngọc Trai 9",
+  "lat": 20.9965362,
+  "lon": 105.9475274
+ },
+ {
+  "code": "NT06-33",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9957721,
+  "lon": 105.9493582
+ },
+ {
+  "code": "NT06-31",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9958188,
+  "lon": 105.949428
+ },
+ {
+  "code": "NT06-29",
+  "street": "Ngọc Trai 6",
+  "lat": 20.995867,
+  "lon": 105.9494978
+ },
+ {
+  "code": "NT06-27",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9959208,
+  "lon": 105.9495706
+ },
+ {
+  "code": "NT06-25",
+  "street": "Ngọc Trai 6",
+  "lat": 20.995969,
+  "lon": 105.9496434
+ },
+ {
+  "code": "NT06-23",
+  "street": "Ngọc Trai 6",
+  "lat": 20.99602,
+  "lon": 105.9497193
+ },
+ {
+  "code": "NT06-21",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9960653,
+  "lon": 105.949783
+ },
+ {
+  "code": "NT06-19",
+  "street": "Ngọc Trai 6",
+  "lat": 20.996122,
+  "lon": 105.9498634
+ },
+ {
+  "code": "NT06-17",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9961687,
+  "lon": 105.9499317
+ },
+ {
+  "code": "NT06-15",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9962197,
+  "lon": 105.9500061
+ },
+ {
+  "code": "NT06-11",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9962636,
+  "lon": 105.9500789
+ },
+ {
+  "code": "NT06-09",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9963146,
+  "lon": 105.9501502
+ },
+ {
+  "code": "NT06-07",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9963528,
+  "lon": 105.9502124
+ },
+ {
+  "code": "NT06-05",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9964081,
+  "lon": 105.9502913
+ },
+ {
+  "code": "NT06-03",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9964449,
+  "lon": 105.9503626
+ },
+ {
+  "code": "NT06-01",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9965002,
+  "lon": 105.9504491
+ },
+ {
+  "code": "NT06-37",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9956675,
+  "lon": 105.949219
+ },
+ {
+  "code": "NT06-35",
+  "street": "Ngọc Trai 6",
+  "lat": 20.9957142,
+  "lon": 105.9492888
+ },
+ {
+  "code": "NT05-06",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9962809,
+  "lon": 105.9503978
+ },
+ {
+  "code": "NT05-08",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9962278,
+  "lon": 105.9503174
+ },
+ {
+  "code": "NT05-12",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9961301,
+  "lon": 105.9501709
+ },
+ {
+  "code": "NT05-10",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9961832,
+  "lon": 105.9502514
+ },
+ {
+  "code": "NT05-18",
+  "street": "Ngọc Trai 5",
+  "lat": 20.99603,
+  "lon": 105.9500325
+ },
+ {
+  "code": "NT05-16",
+  "street": "Ngọc Trai 5",
+  "lat": 20.996083,
+  "lon": 105.950113
+ },
+ {
+  "code": "NT05-22",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9959278,
+  "lon": 105.9498866
+ },
+ {
+  "code": "NT05-20",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9959809,
+  "lon": 105.9499671
+ },
+ {
+  "code": "NT05-26",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9958256,
+  "lon": 105.9497482
+ },
+ {
+  "code": "NT05-24",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9958787,
+  "lon": 105.9498287
+ },
+ {
+  "code": "NT05-30",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9957265,
+  "lon": 105.9496076
+ },
+ {
+  "code": "NT05-28",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9957795,
+  "lon": 105.9496881
+ },
+ {
+  "code": "NT05-34",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9956283,
+  "lon": 105.9494585
+ },
+ {
+  "code": "NT05-32",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9956814,
+  "lon": 105.949539
+ },
+ {
+  "code": "NT05-38",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9955251,
+  "lon": 105.9493137
+ },
+ {
+  "code": "NT05-36",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9955782,
+  "lon": 105.9493941
+ },
+ {
+  "code": "NT05-37",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9953036,
+  "lon": 105.9495036
+ },
+ {
+  "code": "NT05-35",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9953503,
+  "lon": 105.9495734
+ },
+ {
+  "code": "NT05-33",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9954082,
+  "lon": 105.9496428
+ },
+ {
+  "code": "NT05-31",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9954549,
+  "lon": 105.9497126
+ },
+ {
+  "code": "NT05-29",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9955031,
+  "lon": 105.9497824
+ },
+ {
+  "code": "NT05-27",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9955569,
+  "lon": 105.9498552
+ },
+ {
+  "code": "NT05-25",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9956051,
+  "lon": 105.949928
+ },
+ {
+  "code": "NT05-23",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9956561,
+  "lon": 105.9500039
+ },
+ {
+  "code": "NT05-21",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9957014,
+  "lon": 105.9500676
+ },
+ {
+  "code": "NT05-19",
+  "street": "Ngọc Trai 5",
+  "lat": 20.995758,
+  "lon": 105.9501481
+ },
+ {
+  "code": "NT05-17",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9958048,
+  "lon": 105.9502163
+ },
+ {
+  "code": "NT05-15",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9958558,
+  "lon": 105.9502907
+ },
+ {
+  "code": "NT05-11",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9958997,
+  "lon": 105.9503635
+ },
+ {
+  "code": "NT05-09",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9959507,
+  "lon": 105.9504348
+ },
+ {
+  "code": "NT05-07",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9960049,
+  "lon": 105.9505024
+ },
+ {
+  "code": "NT05-05",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9960442,
+  "lon": 105.9505759
+ },
+ {
+  "code": "NT05-03",
+  "street": "Ngọc Trai 5",
+  "lat": 20.996081,
+  "lon": 105.9506472
+ },
+ {
+  "code": "NT05-01",
+  "street": "Ngọc Trai 5",
+  "lat": 20.9961363,
+  "lon": 105.9507337
+ },
+ {
+  "code": "NT03-06",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9959136,
+  "lon": 105.9506873
+ },
+ {
+  "code": "NT03-08",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9958605,
+  "lon": 105.9506068
+ },
+ {
+  "code": "NT03-10",
+  "street": "Ngọc Trai 3",
+  "lat": 20.995816,
+  "lon": 105.9505408
+ },
+ {
+  "code": "NT03-12",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9957629,
+  "lon": 105.9504604
+ },
+ {
+  "code": "NT03-16",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9957158,
+  "lon": 105.9504024
+ },
+ {
+  "code": "NT03-18",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9956627,
+  "lon": 105.950322
+ },
+ {
+  "code": "NT03-20",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9956136,
+  "lon": 105.9502565
+ },
+ {
+  "code": "NT03-22",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9955606,
+  "lon": 105.9501761
+ },
+ {
+  "code": "NT03-24",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9955115,
+  "lon": 105.9501181
+ },
+ {
+  "code": "NT03-26",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9954584,
+  "lon": 105.9500377
+ },
+ {
+  "code": "NT03-28",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9954123,
+  "lon": 105.9499776
+ },
+ {
+  "code": "NT03-30",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9953592,
+  "lon": 105.9498971
+ },
+ {
+  "code": "NT03-32",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9953141,
+  "lon": 105.9498285
+ },
+ {
+  "code": "NT03-34",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9952611,
+  "lon": 105.949748
+ },
+ {
+  "code": "NT03-36",
+  "street": "Ngọc Trai 3",
+  "lat": 20.995211,
+  "lon": 105.9496836
+ },
+ {
+  "code": "NT03-38",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9951579,
+  "lon": 105.9496031
+ },
+ {
+  "code": "NT03-01",
+  "street": "Ngọc Trai 3",
+  "lat": 20.995725,
+  "lon": 105.9508811
+ },
+ {
+  "code": "NT03-03",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9956818,
+  "lon": 105.9508158
+ },
+ {
+  "code": "NT03-05",
+  "street": "Ngọc Trai 3",
+  "lat": 20.995629,
+  "lon": 105.9507559
+ },
+ {
+  "code": "NT03-07",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9955858,
+  "lon": 105.9506906
+ },
+ {
+  "code": "NT03-09",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9955369,
+  "lon": 105.9506254
+ },
+ {
+  "code": "NT03-11",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9954937,
+  "lon": 105.9505602
+ },
+ {
+  "code": "NT03-15",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9954434,
+  "lon": 105.9504934
+ },
+ {
+  "code": "NT03-17",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9954002,
+  "lon": 105.9504282
+ },
+ {
+  "code": "NT03-19",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9953577,
+  "lon": 105.9503622
+ },
+ {
+  "code": "NT03-21",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9953145,
+  "lon": 105.9502969
+ },
+ {
+  "code": "NT03-23",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9952642,
+  "lon": 105.9502355
+ },
+ {
+  "code": "NT03-25",
+  "street": "Ngọc Trai 3",
+  "lat": 20.995221,
+  "lon": 105.9501702
+ },
+ {
+  "code": "NT03-27",
+  "street": "Ngọc Trai 3",
+  "lat": 20.995163,
+  "lon": 105.9500944
+ },
+ {
+  "code": "NT03-29",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9951198,
+  "lon": 105.9500291
+ },
+ {
+  "code": "NT03-31",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9950723,
+  "lon": 105.9499677
+ },
+ {
+  "code": "NT03-33",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9950291,
+  "lon": 105.9499024
+ },
+ {
+  "code": "NT03-35",
+  "street": "Ngọc Trai 3",
+  "lat": 20.994976,
+  "lon": 105.9498152
+ },
+ {
+  "code": "NT03-37",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9949328,
+  "lon": 105.9497499
+ },
+ {
+  "code": "NT02-02",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9955991,
+  "lon": 105.9509814
+ },
+ {
+  "code": "NT02-06",
+  "street": "Ngọc Trai 2",
+  "lat": 20.99555,
+  "lon": 105.9509128
+ },
+ {
+  "code": "NT02-10",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9954554,
+  "lon": 105.9507862
+ },
+ {
+  "code": "NT02-08",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9955045,
+  "lon": 105.9508548
+ },
+ {
+  "code": "NT02-16",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9953472,
+  "lon": 105.9506564
+ },
+ {
+  "code": "NT02-12",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9953963,
+  "lon": 105.950725
+ },
+ {
+  "code": "NT02-20",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9952591,
+  "lon": 105.9505201
+ },
+ {
+  "code": "NT02-18",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9953081,
+  "lon": 105.9505888
+ },
+ {
+  "code": "NT02-24",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9951699,
+  "lon": 105.9503967
+ },
+ {
+  "code": "NT02-22",
+  "street": "Ngọc Trai 2",
+  "lat": 20.995219,
+  "lon": 105.9504654
+ },
+ {
+  "code": "NT02-28",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9950768,
+  "lon": 105.9502562
+ },
+ {
+  "code": "NT02-26",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9951258,
+  "lon": 105.9503248
+ },
+ {
+  "code": "NT02-32",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9949876,
+  "lon": 105.950121
+ },
+ {
+  "code": "NT02-30",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9950367,
+  "lon": 105.9501897
+ },
+ {
+  "code": "NT02-36",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9949005,
+  "lon": 105.9499987
+ },
+ {
+  "code": "NT02-34",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9949495,
+  "lon": 105.9500673
+ },
+ {
+  "code": "NT02-40",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9947923,
+  "lon": 105.9498538
+ },
+ {
+  "code": "NT02-38",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9948414,
+  "lon": 105.9499225
+ },
+ {
+  "code": "NT03-71",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9940475,
+  "lon": 105.9485101
+ },
+ {
+  "code": "NT03-69",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9940949,
+  "lon": 105.9485715
+ },
+ {
+  "code": "NT03-67",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9941544,
+  "lon": 105.9486512
+ },
+ {
+  "code": "NT03-65",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9941962,
+  "lon": 105.9487126
+ },
+ {
+  "code": "NT03-63",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9942557,
+  "lon": 105.9487931
+ },
+ {
+  "code": "NT03-61",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9943023,
+  "lon": 105.9488552
+ },
+ {
+  "code": "NT03-59",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9943557,
+  "lon": 105.9489312
+ },
+ {
+  "code": "NT03-57",
+  "street": "Ngọc Trai 3",
+  "lat": 20.994396,
+  "lon": 105.9490025
+ },
+ {
+  "code": "NT03-55",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9944498,
+  "lon": 105.949079
+ },
+ {
+  "code": "NT03-53",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9944949,
+  "lon": 105.9491584
+ },
+ {
+  "code": "NT03-51",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9945381,
+  "lon": 105.9492236
+ },
+ {
+  "code": "NT03-47",
+  "street": "Ngọc Trai 3",
+  "lat": 20.994587,
+  "lon": 105.9492889
+ },
+ {
+  "code": "NT03-45",
+  "street": "Ngọc Trai 3",
+  "lat": 20.994654,
+  "lon": 105.9493681
+ },
+ {
+  "code": "NT03-41",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9947098,
+  "lon": 105.9494459
+ },
+ {
+  "code": "NT03-39",
+  "street": "Ngọc Trai 3",
+  "lat": 20.9947542,
+  "lon": 105.9495265
+ },
+ {
+  "code": "NT02-42",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9946524,
+  "lon": 105.9496136
+ },
+ {
+  "code": "NT02-46",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9945917,
+  "lon": 105.9495333
+ },
+ {
+  "code": "NT02-48",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9945437,
+  "lon": 105.9494747
+ },
+ {
+  "code": "NT02-50",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9944831,
+  "lon": 105.9494007
+ },
+ {
+  "code": "NT02-52",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9944486,
+  "lon": 105.9493466
+ },
+ {
+  "code": "NT02-54",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9944056,
+  "lon": 105.9492618
+ },
+ {
+  "code": "NT02-56",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9943534,
+  "lon": 105.9492112
+ },
+ {
+  "code": "NT02-58",
+  "street": "Ngọc Trai 2",
+  "lat": 20.994302,
+  "lon": 105.94914
+ },
+ {
+  "code": "NT02-60",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9942632,
+  "lon": 105.9490822
+ },
+ {
+  "code": "NT02-62",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9942127,
+  "lon": 105.9490083
+ },
+ {
+  "code": "NT02-64",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9941706,
+  "lon": 105.948955
+ },
+ {
+  "code": "NT02-66",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9941201,
+  "lon": 105.9488792
+ },
+ {
+  "code": "NT02-68",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9940805,
+  "lon": 105.9488215
+ },
+ {
+  "code": "NT02-70",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9940232,
+  "lon": 105.948743
+ },
+ {
+  "code": "NT02-03",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9952065,
+  "lon": 105.9509377
+ },
+ {
+  "code": "NT02-05",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9951406,
+  "lon": 105.9508489
+ },
+ {
+  "code": "NT02-07",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9950953,
+  "lon": 105.9507791
+ },
+ {
+  "code": "NT02-09",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9950372,
+  "lon": 105.9506934
+ },
+ {
+  "code": "NT02-11",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9949798,
+  "lon": 105.9506138
+ },
+ {
+  "code": "NT02-15",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9949182,
+  "lon": 105.9505295
+ },
+ {
+  "code": "NT02-17",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9948707,
+  "lon": 105.9504613
+ },
+ {
+  "code": "NT02-19",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9948084,
+  "lon": 105.9503748
+ },
+ {
+  "code": "NT02-21",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9947687,
+  "lon": 105.9502997
+ },
+ {
+  "code": "NT02-23",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9947078,
+  "lon": 105.9502147
+ },
+ {
+  "code": "NT02-25",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9946604,
+  "lon": 105.9501457
+ },
+ {
+  "code": "NT02-27",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9945973,
+  "lon": 105.9500554
+ },
+ {
+  "code": "NT02-29",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9944026,
+  "lon": 105.9497868
+ },
+ {
+  "code": "NT02-31",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9943416,
+  "lon": 105.9497003
+ },
+ {
+  "code": "NT02-33",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9942977,
+  "lon": 105.9496389
+ },
+ {
+  "code": "NT02-35",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9942347,
+  "lon": 105.9495479
+ },
+ {
+  "code": "NT02-37",
+  "street": "Ngọc Trai 2",
+  "lat": 20.994183,
+  "lon": 105.9494758
+ },
+ {
+  "code": "NT02-39",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9941214,
+  "lon": 105.9493794
+ },
+ {
+  "code": "NT02-41",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9940661,
+  "lon": 105.9493119
+ },
+ {
+  "code": "NT02-43",
+  "street": "Ngọc Trai 2",
+  "lat": 20.9940045,
+  "lon": 105.9492201
+ }
+]
